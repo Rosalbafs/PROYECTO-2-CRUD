@@ -27,3 +27,13 @@ let product1 = new Product(
 )
 
 console.log(product1.registrar())
+
+document.querySelectorAll('.delete').forEach((element) => {
+  element.addEventListener('click', ocultar)
+})
+document.querySelectorAll('.save').forEach((element) => {
+  element.addEventListener('click', salvar)
+})
+
+console.log(Product)
+console.log(window.localStorage)
