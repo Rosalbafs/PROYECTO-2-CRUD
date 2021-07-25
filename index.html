@@ -10,6 +10,7 @@
 </head>
 <body>
     <header>Product Data</header>
+
         <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Products App</a>
         </nav>
@@ -38,6 +39,28 @@
                     <input type="submit" value="Save" class="btn btn-primary btn-block">
                 </form>
             </div>
+            </div>
+        
+            <div class="container">
+                <form>
+                 <div class="form-group">
+                  
+                  <button id="adicionar" class="btn btn-success" type="button">Adicionar a la tabla</button>
+                </div>
+              </form>
+
+        <p>Elementos en la Tabla:
+                <div id="adicionados"></div>
+              </p>
+              <table  id="mytable" class="table table-bordered table-hover ">
+                <tr>
+                  <th>name</th>
+                  <th>price</th>
+                  <th>year</th>
+                  <th>Eliminar</th>
+              
+                </tr>
+              </table>
             </div>
 
     <script src="./funcional.js"></script>
