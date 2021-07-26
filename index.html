@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="diseno.css">
 </head>
 <body>
-    <header>Product Data</header>
-
+    <h1>
+        <header>Product Data</header>
+    </h1>
         <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Products App</a>
+        <a class="navbar-brand" href="#">Form</a>
         </nav>
 
         <div class="container">
@@ -22,7 +23,7 @@
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-header">
-                    <h4>Add A Product</h4>
+                    <h4>Add Product</h4>
                     </div>
                 <form id="product-form" class="card-body">
                     <div class="form-group">
@@ -37,33 +38,56 @@
                             class="form-control">
                     </div>
                     <input type="submit" value="Save" class="btn btn-primary btn-block">
+                    <input type="submit" value="Edit" class="btn btn-primary btn-block">
+                    <input type="submit" value="Cancel" class="btn btn-primary btn-block">
+                    <input type="submit" value="Delete" class="btn btn-primary btn-block">
                 </form>
             </div>
             </div>
         
             <div class="container">
-                <form>
-                 <div class="form-group">
-                  
-                  <button id="adicionar" class="btn btn-success" type="button">Adicionar a la tabla</button>
-                </div>
-              </form>
-
-        <p>Elementos en la Tabla:
+                
+<p>Table Elements:
                 <div id="adicionados"></div>
               </p>
               <table  id="mytable" class="table table-bordered table-hover ">
+                <thead>
                 <tr>
-                  <th>name</th>
-                  <th>price</th>
-                  <th>year</th>
-                  <th>Eliminar</th>
-              
+                  <th scope="col">Name</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Year</th>
                 </tr>
+                </thead>
+
+                <thead>
+                    <tr>
+                        <th id="name">arroz</th>
+                        <th id="price">1.15</th>
+                        <th id="year">2018</th>
+                    </tr>
+                </thead>
+            
+                <thead>
+                    <tr>
+                        <th id="name">pimienta</th>
+                        <th id="price">2</th>
+                        <th id="year">2019</th>
+                    </tr>
+                </thead>
+
+                <thead>
+                    <tr>
+                        <th id="name">frijol</th>
+                        <th id="price">3.2</th>
+                        <th id="year">2020</th>
+                    </tr>
+                </thead>
+
               </table>
             </div>
+          
 
-    <script src="./funcional.js"></script>
+<script src="./funcional.js"></script>
     
 </body>
 </html>

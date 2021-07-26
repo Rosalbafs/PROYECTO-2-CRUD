@@ -26,14 +26,21 @@ let product1 = new Product(
     2018
 )
 
-console.log(product1.registrar())
+let product2 = new Product(
+  'pimienta',
+  2,
+  2019
+)
 
-document.querySelectorAll('.delete').forEach((element) => {
-  element.addEventListener('click', ocultar)
-})
-document.querySelectorAll('.save').forEach((element) => {
-  element.addEventListener('click', salvar)
-})
+let product3 = new Product(
+  'frijol',
+  3.2,
+  2020
+)
+
+console.log(product1.registrar())
+console.log(product2.registrar())
+console.log(product3.registrar())
 
 console.log(Product)
 console.log(window.localStorage)
