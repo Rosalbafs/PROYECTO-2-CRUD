@@ -21,19 +21,19 @@ class Product {
       }
     }
 let product1 = new Product(
-    'arroz',
+    'rice',
     1.15,
     2018
 )
 
 let product2 = new Product(
-  'pimienta',
+  'pepper',
   2,
   2019
 )
 
 let product3 = new Product(
-  'frijol',
+  'bean',
   3.2,
   2020
 )

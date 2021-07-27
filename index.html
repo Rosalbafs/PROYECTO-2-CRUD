@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="diseno.css">
 </head>
 <body>
-    <h1>
-        <header>Product Data</header>
-    </h1>
+    
+        <header><h1>Product Data</h1></header>
+    
         <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Form</a>
         </nav>
@@ -22,6 +22,7 @@
 
             <div class="col-md-4">
                 <div class="card">
+
                     <div class="card-header">
                     <h4>Add Product</h4>
                     </div>
@@ -38,15 +39,12 @@
                             class="form-control">
                     </div>
                     <input type="submit" value="Save" class="btn btn-primary btn-block">
-                    <input type="submit" value="Edit" class="btn btn-primary btn-block">
-                    <input type="submit" value="Cancel" class="btn btn-primary btn-block">
-                    <input type="submit" value="Delete" class="btn btn-primary btn-block">
+                    
                 </form>
             </div>
             </div>
         
-            <div class="container">
-                
+                           
 <p>Table Elements:
                 <div id="adicionados"></div>
               </p>
@@ -56,33 +54,42 @@
                   <th scope="col">Name</th>
                   <th scope="col">Price</th>
                   <th scope="col">Year</th>
+                  <th scope="col">Actions</th>
+                  
+
                 </tr>
                 </thead>
 
                 <thead>
                     <tr>
-                        <th id="name">arroz</th>
+                        <th id="name">rice</th>
                         <th id="price">1.15</th>
                         <th id="year">2018</th>
+                        <th><button class ="btn-info btnEdit">Edit</button>
+                            <button class ="btn-danger btnDelete">Delete</button></th>
                     </tr>
                 </thead>
             
                 <thead>
                     <tr>
-                        <th id="name">pimienta</th>
+                        <th id="name">pepper</th>
                         <th id="price">2</th>
                         <th id="year">2019</th>
+                        <th><button class ="btn-info btnEdit">Edit</button>
+                            <button class ="btn-danger btnDelete">Delete</button></th>
                     </tr>
                 </thead>
 
                 <thead>
                     <tr>
-                        <th id="name">frijol</th>
+                        <th id="name">bean</th>
                         <th id="price">3.2</th>
                         <th id="year">2020</th>
+                        <th><button class ="btn-info btnEdit">Edit</button>
+                            <button class ="btn-danger btnDelete">Delete</button></th>
                     </tr>
                 </thead>
-
+                               
               </table>
             </div>
           

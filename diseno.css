@@ -1,8 +1,7 @@
 header{ 
     padding: 28PX;
     color: blue;
-    text-size-adjust: 48px;
-}
+    }
 
 .success, .error {
     color: white;
@@ -18,7 +17,7 @@ header{
     background: red;
 }
 
-[css]body {
+body {
     font: 13px verdana;
     font-weight: normal;
-    }[/css]
+    }
