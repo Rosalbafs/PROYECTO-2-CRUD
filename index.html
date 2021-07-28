@@ -1,100 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css">
-    <link rel="stylesheet" href="diseno.css">
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>CRUD</title>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css">
+ <link rel="stylesheet" href="diseno.css">
 </head>
 <body>
-    
-        <header><h1>Product Data</h1></header>
-    
-        <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Form</a>
-        </nav>
-
-        <div class="container">
-        <!-- APPLICATION -->
-        <div id="funcional="row pt-5">
-
-            <div class="col-md-4">
-                <div class="card">
-
-                    <div class="card-header">
-                    <h4>Add Product</h4>
-                    </div>
-                <form id="product-form" class="card-body">
-                    <div class="form-group">
-                        <input type="text" id="name" placeholder="Product Name" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <input type="number" id="price" step="0.01" placeholder="Product Price"
-                            class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <input type="number" id="year" min="1900" max="2099" step="1" value="2018"
-                            class="form-control">
-                    </div>
-                    <button class="btn btn-primary btn-block" id="save">Save</button>
-                    
-                </form>
-            </div>
-            </div>
-        
-                           
+ 
+ <header><h1>Product Data</h1></header>
+ 
+ <nav class="navbar navbar-dark bg-dark">
+ <a class="navbar-brand" href="#">Form</a>
+ </nav>
+ 
+ <div class="container">
+ <!-- APPLICATION -->
+ <div id="funcional="row pt-5">
+ 
+ <div class="col-md-4">
+ <div class="card">
+ 
+ <div class="card-header">
+ <h4>Add Product</h4>
+ </div>
+ <div id="product-form" class="card-body">
+ <div class="form-group">
+ <input type="text" id="name" placeholder="Product Name" class="form-control">
+ </div>
+ <div class="form-group">
+ <input type="number" id="price" step="0.01" placeholder="Product Price"
+ class="form-control">
+ </div>
+ <div class="form-group">
+ <input type="number" id="year" min="1900" max="2099" step="1" value="2018"
+ class="form-control">
+ </div>
+ <button class="btn btn-primary btn-block" id="save">Save</button>
+ 
+ </div>
+ </div>
+ </div>
+ 
+ 
 <p>Table Elements:
-                <div id="adicionados"></div>
-              </p>
-              <table  id="mytable" class="table table-bordered table-hover ">
-                <thead>
-                <tr>
-                  <th scope="col">Name</th>
-                  <th scope="col">Price</th>
-                  <th scope="col">Year</th>
-                  <th scope="col">Actions</th>
-                  
-
-                </tr>
-                </thead>
-
-                <thead>
-                    <tr>
-                        <th id="name">rice</th>
-                        <th id="price">1.15</th>
-                        <th id="year">2018</th>
-                        <th><button class ="btn-info btnEdit">Edit</button>
-                            <button class ="btn-danger btnDelete">Delete</button></th>
-                    </tr>
-                </thead>
-            
-                <thead>
-                    <tr>
-                        <th id="name">pepper</th>
-                        <th id="price">2</th>
-                        <th id="year">2019</th>
-                        <th><button class ="btn-info btnEdit">Edit</button>
-                            <button class ="btn-danger btnDelete">Delete</button></th>
-                    </tr>
-                </thead>
-
-                <thead>
-                    <tr>
-                        <th id="name">bean</th>
-                        <th id="price">3.2</th>
-                        <th id="year">2020</th>
-                        <th><button class ="btn-info btnEdit">Edit</button>
-                            <button class ="btn-danger btnDelete">Delete</button></th>
-                    </tr>
-                </thead>
-                               
-              </table>
-            </div>
-          
-
+ <div id="adicionados"></div>
+ </p>
+ <table id="mytable" class="table table-bordered table-hover ">
+ <thead>
+ <tr>
+ <th scope="col">Name</th>
+ <th scope="col">Price</th>
+ <th scope="col">Year</th>
+ <th scope="col">Actions</th>
+ 
+ 
+ </tr>
+ </thead>
+ <tbody id="product-list">
+ </tbody> 
+ </table>
+ </div>
+ 
+ 
 <script src="./funcional.js"></script>
-    
+ 
 </body>
 </html>
