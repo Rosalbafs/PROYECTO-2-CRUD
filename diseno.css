@@ -3,7 +3,13 @@ header{
     color: blue;
     }
 
-.success, .error {
+    table{
+    flex-direction: column;   
+    border-bottom: blueviolet;
+    padding-bottom: 20 px;
+    border-style: double;
+    }
+    .success, .error {
     color: white;
     padding: 5px;
     margin: 5px 0 15px 0;
