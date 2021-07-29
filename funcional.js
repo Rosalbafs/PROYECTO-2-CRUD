@@ -1,3 +1,4 @@
+//Variables globales
 class Product {
   name = '';
   price = 0;
@@ -39,6 +40,7 @@ class Product {
  )
  let productList = []
   
+ //Funciones
  function addProduct(name, price, year) {
   let product = new Product(name, price, year)
   productList.push(product)
@@ -66,14 +68,56 @@ class Product {
   <th id="price">${product.price}</th>
   <th id="year">${product.year}</th>
   <th>
-  <button class="btn-info btnEdit">Edit</button>
-  <button class="btn-danger btnDelete">Delete</button>
+  <button class="btn-info btnEditar">Editar</button>
+  <button class="btn-danger btnBorrar">Borrar</button>
   </th>
   </tr>`
   document.getElementById('product-list').innerHTML += html
   })
  }
-  
+ 
+ const EditarDB = (actividad) => {
+ let indexArray = arrayActividades.findIndex((elemento)=>elemento.actividad === actividad);
+  arrayActividades[indexArray].estado = true;
+  GuardarDB();
+  }
+
+ const EliminarDB = (actividad) => {
+ let indexArray;
+ arrayActividades.forEach((elemento, index) => {
+ if(elemento.actividad === actividad){
+ indexArray = index;
+ }
+ });
+ arrayActividades.splice(indexArray,1);
+ GuardarDB();
+ }
+
+// EventListener
+formularioUI.addEventListener('submit', (e) => {
+e.preventDefault();
+let actividadUI = document.querySelector('#actividad').value;
+CrearItem(actividadUI);
+GuardarDB();
+formularioUI.reset();
+});
+
+document.addEventListener('DOMContentLoaded', PintarDB);
+listaActividadesUI.addEventListener('click', (e) => {
+e.preventDefault();
+if(e.target.innerHTML === 'done' || e.target.innerHTML === 'delete'){
+let texto = e.path[2].childNodes[1].innerHTML;
+if(e.target.innerHTML === 'delete'){
+// Accción de eliminar
+EliminarDB(texto);
+}
+if(e.target.innerHTML === 'done'){
+// Accción de editar
+EditarDB(texto);
+}
+}
+});
+
  // tener una lista de productos utilizar foreach
  /* document.getElementById('table-content').innerHtml += `
   <tr>

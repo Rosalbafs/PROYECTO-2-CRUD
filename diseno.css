@@ -1,29 +1,22 @@
 header{ 
+    align-content: center;
     padding: 28PX;
     color: blue;
+    text-align: center;
+    display: list-item;
+    background-color: yellowgreen;
     }
 
     table{
-    flex-direction: column;   
+    flex-direction: column; 
+    text-align:center;
     border-bottom: blueviolet;
     padding-bottom: 20 px;
     border-style: double;
     }
-    .success, .error {
-    color: white;
-    padding: 5px;
-    margin: 5px 0 15px 0;
-}
-
-.success {
-    background: green;
-}
-
-.error {
-    background: red;
-}
-
+    
 body {
     font: 13px verdana;
     font-weight: normal;
+    justify-content: center;
     }
