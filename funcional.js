@@ -39,14 +39,32 @@ class Product {
   2020
  )
  let productList = []
-  
+ 
  //Funciones
  function addProduct(name, price, year) {
+  let found = 0
+  productList.forEach(element => { 
+  const nombreProducto = element.name 
+  console.log('name'+nombreProducto+'nombre elemento'+name)
+  if (nombreProducto === name){
+  found=1
+console.log('encontre un elemento')  
+element.name=name
+element.price=price
+element.year=year
+showData();
+}
+
+  })
+if (found === 0){
   let product = new Product(name, price, year)
   productList.push(product)
+  localStorage.setItem(name, JSON.stringify(product));
   insertProductHtml()
+}
   clearInputs()
  }
+
  function clearInputs() {
   document.getElementById('name').value = ''
   document.getElementById('price').value = ''
@@ -61,62 +79,67 @@ class Product {
  })
   
  function insertProductHtml() {
+  let html = ''
   productList.forEach(function (product, index) {
-  let html = `
+  html += `
   <tr id="${index}">
   <th id="name">${product.name}</th>
   <th id="price">${product.price}</th>
   <th id="year">${product.year}</th>
   <th>
-  <button class="btn-info btnEditar">Editar</button>
-  <button class="btn-danger btnBorrar">Borrar</button>
-  </th>
+  <button onClick="editar(${index})" class= "btn-info btnEditar" id="btn-danger btnEditar">Editar</button>
+  <button onClick="borrar(${index})" class= "btn-danger btnBorrar" id="btn-danger btnBorrar">Borrar</button>
+   </th>
   </tr>`
-  document.getElementById('product-list').innerHTML += html
   })
+  document.getElementById('product-list').innerHTML = html
  }
+
  
- const EditarDB = (actividad) => {
- let indexArray = arrayActividades.findIndex((elemento)=>elemento.actividad === actividad);
-  arrayActividades[indexArray].estado = true;
-  GuardarDB();
-  }
+ function borrar (e) {
+   //document.querySelectorall('btn-danger btnBorrar').foreach(item => {
+   //  item.addEventListener('click' , eliminar=>{
+   // const fila = eliminar.target.parentNode.parentNode.getAttribute('data-id')
+    // return fila = '';
+     //})
+    //}
+   //console.log(productList)
+   //console.log(e)
+   productList.splice(e, 1)
+   //console.log(productList)
+   showData();
+   }
 
- const EliminarDB = (actividad) => {
- let indexArray;
- arrayActividades.forEach((elemento, index) => {
- if(elemento.actividad === actividad){
- indexArray = index;
- }
- });
- arrayActividades.splice(indexArray,1);
- GuardarDB();
- }
+   function showData () {
+    let html = '' 
+    productList.forEach(function (product, index) {
+      html += `
+      <tr id="${index}">
+      <th id="name">${product.name}</th>
+      <th id="price">${product.price}</th>
+      <th id="year">${product.year}</th>
+      <th>
+      <button onClick="editar(${index})" class= "btn-info btnEditar" id="btn-danger btnEditar">Editar</button>
+      <button onClick="borrar(${index})" class= "btn-danger btnBorrar" id="btn-danger btnBorrar">Borrar</button>
+       </th>
+      </tr>`
+      })
+            document.getElementById('product-list').innerHTML = html
+   }
 
-// EventListener
-formularioUI.addEventListener('submit', (e) => {
-e.preventDefault();
-let actividadUI = document.querySelector('#actividad').value;
-CrearItem(actividadUI);
-GuardarDB();
-formularioUI.reset();
-});
+   function editar (e) {
+    console.log(productList)
+    console.log(e)
+    //productList.splice(e, 1)
+    //console.log(productList)
+    console.log(productList[e].name)
+    document.getElementById('name').value = productList[e].name
+    document.getElementById('price').value = productList[e].price
+    document.getElementById('year').value = productList[e].year
+    //showData();
+    }
 
-document.addEventListener('DOMContentLoaded', PintarDB);
-listaActividadesUI.addEventListener('click', (e) => {
-e.preventDefault();
-if(e.target.innerHTML === 'done' || e.target.innerHTML === 'delete'){
-let texto = e.path[2].childNodes[1].innerHTML;
-if(e.target.innerHTML === 'delete'){
-// Accción de eliminar
-EliminarDB(texto);
-}
-if(e.target.innerHTML === 'done'){
-// Accción de editar
-EditarDB(texto);
-}
-}
-});
+    
 
  // tener una lista de productos utilizar foreach
  /* document.getElementById('table-content').innerHtml += `
