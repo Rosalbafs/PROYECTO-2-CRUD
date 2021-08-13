@@ -41,31 +41,31 @@ class Product {
  let productList = []
  
  //Funciones
- function addProduct(name, price, year) {
-  let found = 0
+  function addProduct(name, price, year) {
+  let product = new Product(name,price,year)
+  productList.push(product)
+  console.log(productList)
+  localStorage.setItem('ListaProductos', JSON.stringify(productList));
   productList.forEach(element => { 
   const nombreProducto = element.name 
   console.log('name'+nombreProducto+'nombre elemento'+name)
   if (nombreProducto === name){
-  found=1
-console.log('encontre un elemento')  
-element.name=name
-element.price=price
-element.year=year
-showData();
-}
+    found=1
+    console.log('encontre un elemento')
+
+
+    element.name=name
+    element.price=price
+    element.year=year
+    showData();
+  }
 
   })
-if (found === 0){
-  let product = new Product(name, price, year)
-  productList.push(product)
-  localStorage.setItem(name, JSON.stringify(product));
-  insertProductHtml()
-}
-  clearInputs()
- }
 
- function clearInputs() {
+  }
+ 
+ 
+  function clearInputs() {
   document.getElementById('name').value = ''
   document.getElementById('price').value = ''
   document.getElementById('year').value = ''
@@ -112,6 +112,7 @@ if (found === 0){
 
    function showData () {
     let html = '' 
+    productList = JSON.parse(localStorage.getItem('ListaProductos'))
     productList.forEach(function (product, index) {
       html += `
       <tr id="${index}">
@@ -139,8 +140,8 @@ if (found === 0){
     //showData();
     }
 
-    
-
+    showData(); 
+  
  // tener una lista de productos utilizar foreach
  /* document.getElementById('table-content').innerHtml += `
   <tr>
@@ -179,3 +180,4 @@ if (found === 0){
  // 4. borrar producto de la lista array[] (metodo splice en array)
  // 5. actualizar producto al darle click a edit y actualizar los datos de la lista
 
+ 
