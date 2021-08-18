@@ -140,8 +140,7 @@ class Product {
     //showData();
     }
 
-    showData(); 
-  
+      
  // tener una lista de productos utilizar foreach
  /* document.getElementById('table-content').innerHtml += `
   <tr>
